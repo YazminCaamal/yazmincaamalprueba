@@ -1,0 +1,7 @@
+# Created at 2025-10-06T19:05:07.858
+TestEngine with ID 'junit-jupiter' encountered a critical issue during test discovery:
+
+(1) [ERROR] @BeforeEach method 'static void com.calidad.unittest.calculadora.CalculadoraTest.setup()' must not be static.
+    Source: MethodSource [className = 'com.calidad.unittest.calculadora.CalculadoraTest', methodName = 'setup', methodParameterTypes = '']
+            at com.calidad.unittest.calculadora.CalculadoraTest.setup(SourceFile:0)
+

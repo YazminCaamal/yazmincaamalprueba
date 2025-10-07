@@ -2,14 +2,11 @@ package com.calidad.unittest.calculadora;
 
 
 
-public class calculadora{
+public class Calculadora{
     double resultado;
     
   public  double divide(double operador1, double operador2) {
         resultado=(operador1/operador2);
-        System.out.println("La division de "+operador1+" / "+operador2+" es "+resultado);
-        System.out.println("La division de "+operador1+" / "+operador2+" es "+resultado);
-        System.out.println("La division de "+operador1+" / "+operador2+" es "+resultado);
         System.out.println("La division de "+operador1+" / "+operador2+" es "+resultado);
         return resultado;
     }
