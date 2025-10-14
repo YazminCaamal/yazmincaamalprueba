@@ -68,4 +68,24 @@ public class CalculadoraTest {
          assertThat(resultadoEsperado, is(resultado));
 
      }
+
+     /*@Test(expected = NullPointerException.class)
+     public void whenExceptionThrow_thenExpectationSatisfied(){
+        String test = null;
+        test.length();
+     }
+
+     @Test
+     void testInvalidInputThrowsException(){
+        assertThrows(IllegalArgumentException.class, () ->{
+           someMethodThatThrowsException(-1);
+        });
+    }
+    private void someMethodThatThrowsException(int value){
+        if (value < 0){
+            throw new IllegalArgumentException("Value cannot be negative");
+        }
+    }*/
+
+
 }
