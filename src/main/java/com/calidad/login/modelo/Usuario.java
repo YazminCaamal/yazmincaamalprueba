@@ -7,7 +7,7 @@ public class Usuario {
     private String password;
     private boolean isLogged;
 
-    public Usuario(String email, boolean isLogged, String name, String password) {
+    public Usuario(String email, String name) {
         this.email = email;
         this.isLogged = isLogged;
         this.name = name;
