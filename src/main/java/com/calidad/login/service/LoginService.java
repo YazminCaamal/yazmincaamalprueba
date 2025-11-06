@@ -5,22 +5,25 @@ import com.calidad.login.modelo.Usuario;
 
 public class LoginService {
     IDAOLogin dao;
-    public LoginService(IDAOLogin d){
-        dao = d;
+        
+    public LoginService(IDAOLogin d){ // Inyección de dependencia 
+            dao = d;
     }
     public boolean login(String email, String password){
-        Usuario u = dao.findUserByEmail(email);
-        if(u != null){
-            if(u.getPassword() == password){
-                u.setIsLogged(true);
+        Usuario u = dao.findUsuarioByEmail(email);
+        if (u != null){
+            if (u.getPassword() == password){
+                u.setLogged(true);
                 return true;
             }
-            else{
+            else {
                 return false;
             }
         }
-        else{
+        else {
             return false;
         }
+    
     }
+
 }

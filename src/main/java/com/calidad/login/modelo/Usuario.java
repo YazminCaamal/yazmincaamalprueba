@@ -7,11 +7,19 @@ public class Usuario {
     private String password;
     private boolean isLogged;
 
-    public Usuario(String email, String name) {
+    public Usuario(String email, String name, String password) {
         this.email = email;
         this.isLogged = isLogged;
         this.name = name;
         this.password = password;
+    }
+
+    public boolean isLogged() {
+        return isLogged;
+    }
+
+    public void setLogged(boolean isLogged) {
+        this.isLogged = isLogged;
     }
 
     public int getId() {
@@ -53,12 +61,5 @@ public class Usuario {
     public void setIsLogged(boolean isLogged) {
         this.isLogged = isLogged;
     }
-
-
-
-
-
-
-
-
+    
 }
