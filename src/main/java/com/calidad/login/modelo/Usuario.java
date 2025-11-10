@@ -7,11 +7,11 @@ public class Usuario {
     private String password;
     private boolean isLogged;
 
-    public Usuario(String email, String name, String password) {
-        this.email = email;
-        this.isLogged = isLogged;
+    public Usuario(String name, String email, String password) {
         this.name = name;
+        this.email = email;
         this.password = password;
+        this.isLogged = isLogged;
     }
 
     public boolean isLogged() {

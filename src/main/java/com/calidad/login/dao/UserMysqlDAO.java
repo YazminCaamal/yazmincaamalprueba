@@ -48,7 +48,7 @@ public class UserMysqlDAO implements IDAOLogin{
             String password = rs.getString(4);
             boolean isLogged = rs.getBoolean(5);
 
-            result = new Usuario(username, password, email);
+            result = new Usuario(username, email, password);
             result.setId(id);
             result.setLogged(isLogged);
 
