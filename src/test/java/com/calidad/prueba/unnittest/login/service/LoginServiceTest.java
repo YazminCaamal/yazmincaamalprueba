@@ -22,10 +22,10 @@ public class LoginServiceTest {
     @Test
     void LoginExitosoTest(){
         // SETUP
-        String email = "prueba@correo.uady";
+        String email = "correo@gmail.com";
         String pass = "pass1234";
             // Mock findUsuarioByEmail
-        usuario = new Usuario(email,"Jerome",pass);
+        usuario = new Usuario(email,"Yazmin",pass);
             // Mock de la dependencia
         idaologin = mock(IDAOLogin.class);
         when(idaologin.findUsuarioByEmail(email)).thenReturn(usuario);
@@ -39,28 +39,30 @@ public class LoginServiceTest {
     }
 
     @Test
-    void LoginFallido(){
-        // SETUP    
-        String email = "prueba@correo.uady";
-        String pass =  "pass12";
-            // Mock findUsuarioByEmail
-        usuario = new Usuario(email,"Jerome",pass );
-            // Mock de la dependencia
-        idaologin = mock(IDAOLogin.class);    
-        when(idaologin.findUsuarioByEmail(email)).thenReturn(usuario);
-            // Instancia la clase a probar
-        login = new LoginService(idaologin);
-            // Ejercicio 
-        Boolean resultadoes = login.login(email,pass);
-        Boolean resultadoej = false;    
-            // Verificación
-            assertThat(resultadoes,is(resultadoej));    
-    }
+void LoginFallido() {
+    // SETUP    
+    String email = "correo@gmail.com";
+    String pass = "contraseña_incorrecta";
+    
+    usuario = new Usuario(email, "Yazmin", "pass12");
+    idaologin = mock(IDAOLogin.class);
+    when(idaologin.findUsuarioByEmail(email)).thenReturn(usuario);
+    
+    login = new LoginService(idaologin);
+
+    // Ejercicio 
+    Boolean resultadoes = login.login(email, pass); // debería devolver false
+    Boolean resultadoej = false;    
+
+    // Verificación
+    assertThat(resultadoes, is(resultadoej));
+}
+
 
     @Test
     void LoginInexistente(){
         // SETUP  
-        String email = "prueba@gmail.uady";
+        String email = "correo@gmail.com";
         String pass =  "pass12";
             // Mock findUsuarioByEmail
         usuario = null;
@@ -70,10 +72,10 @@ public class LoginServiceTest {
             // Instancia la clase a probar
         login = new LoginService(idaologin);
             // Ejercicio
-        Boolean resultadoes = login.login(email,pass);
-        Boolean resultadoej = false;
+        Boolean resultadoespe = login.login(email,pass);
+        Boolean resultadoeje = false;
             // Verificación
-        assertThat(resultadoes,is(resultadoej));                                                 
+        assertThat(resultadoespe,is(resultadoeje));                                                 
     }
 
 

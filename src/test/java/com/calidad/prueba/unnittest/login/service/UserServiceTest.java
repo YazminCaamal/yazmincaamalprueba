@@ -29,9 +29,9 @@ public class UserServiceTest {
     @Test
     void createUsuarioExitoso(){
         // SETUP
-        String email = "correo@uady.mx";
+        String email = "correo@gmail.com";
         String pass = "Password1234";
-        String nombre = "Fernando";
+        String nombre = "Yazmin";
         int id = 1;
 
         // Definición del Mock del metodo findUsuarioByEmail
@@ -64,9 +64,9 @@ public class UserServiceTest {
     @Test
     void createUsuarioExitosoBD(){
         // SETUP
-        String email = "correo@uady.mx";
+        String email = "correo@gmail.com";
         String pass = "Password1234";
-        String nombre = "Fernando";
+        String nombre = "Yazmin";
         int id = 1;
         HashMap <Integer, Usuario> db = new HashMap<Integer, Usuario>();
  

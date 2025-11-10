@@ -1,87 +1,96 @@
 package com.calidad.prueba.unnittest.calculadora;
 
-import org.hamcrest.Matcher;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.jupiter.api.AfterEach;
+//import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+//import org.junit.jupiter.api.Test;
 
-import com.calidad.prueba.unittest.calculadora.Calculadora;
+import com.calidad.unittest.calculadora.Calculadora;
 
 public class CalculadoraTest {
 
-        public double operador1;
-        public double operador2;
-        public Calculadora calc = new Calculadora();  
-    
-    // Pasos que deben ocurrir antes y despues de cada operación.
-        @BeforeEach
-    void setup(){
+    public double operador1;
+    public double operador2;
+    public Calculadora calc;
+
+    @BeforeEach //Se ejecuta antes del inicio de cada método
+    public void setup(){
         operador1 = 10;
-        operador2 = 5;    
+        operador2 = 5;
         calc = new Calculadora();
-        System.out.println("Vicky es tan AAAAAAAHAHHH!!! ⚡⚡");
+        System.out.println("Inicializando....");
     }
-
-    @AfterEach
+    @AfterEach //Se ejecuta al final de cada método
     public void cleanUp(){
-        System.out.println("Prueba finalizada........");
+        System.out.println("Prueba finalizada");
     }
 
-    // Los Test son utiles para la creación de pruebas.
-    // AssertEquals y AsserThat nos permite obtener los resultados y la comparación con los resultadoEsperando.
-    @Test // Inicio del Metodo de Suma 
-        void testSumaNumerosPositivos(){
-            // 1. Inicializar los datos/variables
-            double resultadoEsperado = 15;
+    @Test
+     void testSumaNumeroPositivos () {
+        //1. Inicializar los datos
+        double resultadoEsperado = 15;
+        //2. Ejercitar el código
+        double resultado = calc.suma(operador1, operador2);
+        //3. Verificar
+        assertThat(resultadoEsperado, is(resultado));
 
-            // 2. LLamar el método/Ejercitar el Método
-            double resultado = calc.suma(operador1, operador2);
+     }
 
-            // 3. Verificación del Resultado
-            assertThat(resultadoEsperado, is(resultado));
-        }
-    
+     @Test
+     void testRestaNumeroPositivos () {
+        //1. Inicializar los datos
+        double resultadoEsperado = 5;
+        //2. Ejercitar el código
+        double resultado = calc.resta(operador1, operador2);
+        //3. Verificar
+         assertThat(resultadoEsperado, is(resultado));
+     }
 
-    @Test // Inicio del Método de Resta
-        void testRestaNumerosPositivos(){
-            // 1.
-            double operador1 = 10;
-            double operador2 = 5;
-            double resultadoEsperado = 5;
+     @Test
+     void testDivideNumeroPositivos () {
+        //1. Inicializar los datos
+        double resultadoEsperado = 2;
+        //2. Ejercitar el código
+        double resultado = calc.divide(operador1, operador2);
+        //3. Verificar
+         assertThat(resultadoEsperado, is(resultado));
 
-            // 2.
-            double resultado = calc.resta(operador1, operador2);
+     }
 
-            // 3.
-            assertThat(resultadoEsperado, is(resultado));
+     @Test
+     void testMultiplicacionNumeroPositivos () {
+        //1. Inicializar los datos
+        double resultadoEsperado = 50;
+        //2. Ejercitar el código
+        double resultado = calc.multiplica(operador1, operador2);
+        //3. Verificar
+         assertThat(resultadoEsperado, is(resultado));
 
-        }
+     }
 
-    @Test // Inicio del Método Multiplicación
-        void testMultiplicaciónNumerosPositivos(){
-            // 1.
-            double operador1 = 10;
-            double operador2 = 2;
-            double resultadoEsperado = 20;
-            
-            // 2.
-            double resultado = calc.multiplica(operador1, operador2);
-
-            // 3. 
-            assertThat(resultadoEsperado, is(resultado));
-
-        }
-
-    /*
-        @Test(expected = NullPointerException.class)
-    public void whenExceptionThrown_thenExpectationSatisfied(){
+     /*@Test(expected = NullPointerException.class)
+     public void whenExceptionThrow_thenExpectationSatisfied(){
         String test = null;
         test.length();
-    } 
-    */
-           
+     }
+
+     @Test
+     void testInvalidInputThrowsException(){
+        assertThrows(IllegalArgumentException.class, () ->{
+           someMethodThatThrowsException(-1);
+        });
+    }
+    private void someMethodThatThrowsException(int value){
+        if (value < 0){
+            throw new IllegalArgumentException("Value cannot be negative");
+        }
+    }*/
+
+
 }
+
