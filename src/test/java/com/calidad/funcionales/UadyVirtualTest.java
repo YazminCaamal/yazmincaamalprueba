@@ -20,6 +20,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class UadyVirtualTest {
     private WebDriver driver;
   private String baseUrl;
@@ -29,6 +31,7 @@ public class UadyVirtualTest {
   @BeforeEach
   public void setUp() throws Exception {
     //System.setProperty("webdriver.chrome.driver", "");
+    WebDriverManager.chromedriver().setup();
     driver = new ChromeDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
