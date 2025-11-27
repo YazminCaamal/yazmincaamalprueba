@@ -21,7 +21,7 @@ jobs:
       - checkout
       - run:
           name: Iniciando
-          command: mvn -B -DskipTests clean package
+          command: "echo Iniciando pipeline"
       - run:
           name: Pruebas calculadora
           command: mvn test -Dtest=CalculadoraTest
